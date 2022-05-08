@@ -9,4 +9,4 @@
 
 # SQL Query
 
-![](images%5Ccarbon.png)
+![](src%5Cimages%5Ccarbon.png)
