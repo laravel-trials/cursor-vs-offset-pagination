@@ -20,5 +20,7 @@ Route::get('/', function () {
     // return view('welcome');
 });
 
+Route::get('customers', [OrdersController::class, 'index']);
+
 
 Route::get('orders', [OrdersController::class, 'index']);

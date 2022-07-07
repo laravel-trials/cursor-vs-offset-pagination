@@ -21,7 +21,7 @@ class OrdersController extends Controller
 
         $shipMethods = ['praesentium', 'qui', 'quis', 'atque', 'voluptatem', 'error', 'esse', 'minus'];
 
-        $query = Orders::with([
+        $query = Orders::query()->with([
             'employee',
             'supplier',
             'customer',
@@ -49,6 +49,7 @@ class OrdersController extends Controller
 
         $data = [
             // 'result' => $query->paginate(10),
+            // 'result' => $query->fastPaginate(10),
             // 'result' => $query->simplePaginate(10),
             'result' => $query->cursorPaginate(10),
 
