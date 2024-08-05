@@ -1,10 +1,12 @@
 version: "3.8"
 
+name: lt_pagination_test
+
 services:
   # Percona for MySQL
-  percona_1_db:
-    image: percona:latest
-    container_name: percona_1_db
+  db:
+    image: mariadb:latest
+    container_name: db
     restart: unless-stopped
     ports:
       - ${MYSQL_PORT}:3306
@@ -14,9 +16,3 @@ services:
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       MYSQL_ALLOW_EMPTY_PASSWORD: ${MYSQL_ALLOW_EMPTY_PASSWORD}
-    networks:
-      - percona_net
-
-networks:
-  percona_net:
-    driver: bridge
